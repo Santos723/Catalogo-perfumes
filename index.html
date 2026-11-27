@@ -10,7 +10,7 @@
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      box-sizing: border-box; 
     }
 
     body {
@@ -107,11 +107,24 @@
     }
 
     .products {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+}
+
+.product {
+    grid-column: span 2;
+}
+
+.product:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.product:nth-child(5) {
+    grid-column: 4 / span 2;
+}
     }
 
     .product {
@@ -218,6 +231,58 @@
       }
     }
   </style>
+.categories {
+    padding: 55px 30px;
+    text-align: center;
+    background: #f7f2e9;
+}
+
+.categories h2 {
+    color: #49382e;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.categories p {
+    color: #766252;
+    margin-bottom: 35px;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.category img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #d5b477;
+    padding: 4px;
+    background: #fff;
+}
+
+.category h3 {
+    color: #49382e;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+    }
+
+    .category img {
+        width: 120px;
+        height: 120px;
+    }
+}
 </head>
 
 <body>
@@ -305,6 +370,49 @@
 
       </div>
     </section>
+    <section class="categories">
+    <h2>Muito além dos perfumes</h2>
+    <p>Tudo o que você procura em beleza e perfumaria, em um só lugar.</p>
+
+    <div class="category-list">
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Maquiagens" alt="Maquiagens">
+            <h3>Maquiagens</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Perfumes" alt="Perfumes">
+            <h3>Perfumes</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Body+Splash" alt="Body Splash">
+            <h3>Body Splash</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Cremes" alt="Cremes">
+            <h3>Cremes</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Sabonetes" alt="Sabonetes">
+            <h3>Sabonetes</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Rimel" alt="Rímel">
+            <h3>Rímel</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Batons" alt="Batons">
+            <h3>Batons</h3>
+        </div>
+
+    </div>
+</section>
   </main>
 
   <footer>
