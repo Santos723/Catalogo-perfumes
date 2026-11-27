@@ -2,269 +2,316 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfumaria da Maria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfumaria da Maria</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #fff5ef;
-  color: #59433b;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f2e9;
+      color: #49382e;
+    }
 
-header {
-  background: #f5c9b6;
-  padding: 25px 20px;
-  text-align: center;
-}
+    header {
+      background: #49382e;
+      color: #f7f2e9;
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-header h1 {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  color: #744638;
-}
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      letter-spacing: 1px;
+    }
 
-header p {
-  margin-top: 8px;
-  color: #805b4d;
-}
+    header span {
+      color: #d5b477;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
 
-nav {
-  background: #fffaf7;
-  padding: 15px;
-  text-align: center;
-}
+    .hero {
+      max-width: 1200px;
+      margin: 55px auto;
+      padding: 0 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
 
-nav a {
-  color: #805b4d;
-  text-decoration: none;
-  margin: 0 12px;
-  font-size: 14px;
-}
+    .hero-text h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.12;
+      margin-bottom: 22px;
+      color: #49382e;
+    }
 
-.hero {
-  padding: 45px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #f8d8c9, #fff0e7);
-}
+    .hero-text h1 span {
+      color: #a68148;
+    }
 
-.hero h2 {
-  font-family: Georgia, serif;
-  font-size: 32px;
-  margin-bottom: 12px;
-  color: #744638;
-}
+    .hero-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #756456;
+      margin-bottom: 25px;
+    }
 
-.hero p {
-  font-size: 15px;
-}
+    .hero-image {
+      min-height: 370px;
+      border-radius: 180px 180px 25px 25px;
+      background:
+        linear-gradient(rgba(73, 56, 46, 0.15), rgba(73, 56, 46, 0.15)),
+        url("https://placehold.co/800x900/e8d9c5/49382e?text=Perfumes+Nacionais+e+Importados")
+        center/cover;
+      box-shadow: 15px 15px 0 #dfcba9;
+    }
 
-section {
-  padding: 35px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
+    .gold-line {
+      width: 75px;
+      height: 3px;
+      background: #b99a65;
+      margin-bottom: 22px;
+    }
 
-.section-title {
-  text-align: center;
-  font-family: Georgia, serif;
-  font-size: 27px;
-  color: #80513f;
-  margin-bottom: 25px;
-}
+    .catalog {
+      background: #eee5d8;
+      padding: 65px 8%;
+      text-align: center;
+    }
 
-.featured {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-}
+    .catalog h2 {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
 
-.product {
-  background: white;
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 15px #9c70501a;
-}
+    .catalog-intro {
+      color: #756456;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
 
-.product img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: #fff0e8;
-  border-radius: 12px;
-}
+    .products {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
 
-.product h3 {
-  margin-top: 13px;
-  color: #744638;
-  font-size: 18px;
-}
+    .product {
+      background: #fbf8f2;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: left;
+      box-shadow: 0 5px 18px rgba(73, 56, 46, 0.08);
+      transition: transform 0.25s;
+    }
 
-.brand {
-  color: #b17b64;
-  font-size: 13px;
-  margin-top: 6px;
-}
+    .product:hover {
+      transform: translateY(-5px);
+    }
 
-.price {
-  margin-top: 10px;
-  color: #9a674e;
-  font-weight: bold;
-}
+    .product img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e8dccb;
+    }
 
-.small-products {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 13px;
-}
+    .product h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      margin: 17px 0 8px;
+    }
 
-.small-products .product {
-  padding: 10px;
-}
+    .product p {
+      color: #8a7868;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
 
-.small-products img {
-  height: 125px;
-}
+    .price {
+      color: #a68148;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
 
-.small-products h3 {
-  font-size: 14px;
-}
+    .button {
+      display: block;
+      text-align: center;
+      background: #49382e;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
 
-.small-products .brand {
-  font-size: 11px;
-}
+    .button:hover {
+      background: #806344;
+    }
 
-footer {
-  margin-top: 30px;
-  padding: 25px;
-  text-align: center;
-  background: #f2c5b1;
-  color: #744638;
-  font-size: 13px;
-}
+    footer {
+      background: #49382e;
+      color: #e9ddca;
+      text-align: center;
+      padding: 30px 15px;
+      line-height: 1.8;
+    }
 
-@media (max-width: 650px) {
-  header h1 {
-    font-size: 25px;
-  }
+    footer strong {
+      color: #d5b477;
+    }
 
-  .hero h2 {
-    font-size: 25px;
-  }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        margin: 35px auto;
+      }
 
-  .featured {
-    grid-template-columns: 1fr;
-  }
+      .hero-image {
+        min-height: 300px;
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+      }
 
-  .small-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-</style>
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product img {
+        height: 300px;
+      }
+
+      .catalog {
+        padding: 45px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Perfumaria da Maria</h1>
-  <p>Seu perfume, sua essência, sua beleza.</p>
-</header>
+  <header>
+    <div class="logo">Perfumaria da Maria</div>
+    <span>BELEZA • ELEGÂNCIA • PERSONALIDADE</span>
+  </header>
 
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#destaques">Destaques</a>
-  <a href="#catalogo">Catálogo</a>
-</nav>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <div class="gold-line"></div>
 
-<div class="hero" id="inicio">
-  <h2>Conheça nossos perfumes</h2>
-  <p>Descubra fragrâncias especiais para todos os momentos.</p>
-</div>
+        <h1>
+          Conheça nossos
+          <span>perfumes</span>
+        </h1>
 
-<section id="destaques">
-  <h2 class="section-title">Perfumes em destaque</h2>
+        <p>
+          Trabalhamos com perfumes multimarcas, nacionais e
+          importados, oferecendo fragrâncias para todos os estilos,
+          ocasiões e personalidades.
+        </p>
 
-  <div class="featured">
+        <p>
+          Encontre aqui aquele aroma especial que combina com você.
+          Sua próxima fragrância favorita pode estar a um clique!
+        </p>
+      </div>
 
-    <div class="product">
-      <img src="https://placehold.co/400x300/f8e3d8/80513f?text=Foto+do+perfume"
-           alt="Good Girl">
-      <h3>Good Girl</h3>
-      <p class="brand">Carolina Herrera</p>
-      <p class="price">Consulte o preço</p>
-    </div>
+      <div class="hero-image" role="img"
+        aria-label="Imagem ilustrativa de perfumes nacionais e importados">
+      </div>
+    </section>
 
-    <div class="product">
-      <img src="https://placehold.co/400x300/f8e3d8/80513f?text=Foto+do+perfume"
-           alt="La Vie Est Belle">
-      <h3>La Vie Est Belle</h3>
-      <p class="brand">Lancôme</p>
-      <p class="price">Consulte o preço</p>
-    </div>
+    <section class="catalog">
+      <h2>Nossas fragrâncias</h2>
 
-  </div>
-</section>
+      <p class="catalog-intro">
+        Confira alguns dos nossos produtos em destaque.
+      </p>
 
-<section id="catalogo">
-  <h2 class="section-title">Mais perfumes para você</h2>
+      <div class="products">
 
-  <div class="small-products">
+        <article class="product">
+          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Lily" alt="Imagem ilustrativa do perfume Lily">
+          <h3>Lily</h3>
+          <p>Elegância e personalidade em uma fragrância especial.</p>
+          <div class="price">Consulte o preço</div>
+          <a class="button" href="#">Consultar preço</a>
+        </article>
 
-    <div class="product">
-      <img src="https://placehold.co/300x200/f8e3d8/80513f?text=Perfume"
-           alt="Lily">
-      <h3>Lily</h3>
-      <p class="brand">O Boticário</p>
-      <p class="price">Consultar</p>
-    </div>
+        <article class="product">
+          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Egeo+Dolce" alt="Imagem ilustrativa do perfume Egeo Dolce">
+          <h3>Egeo Dolce</h3>
+          <p>Uma fragrância marcante para quem gosta de se destacar.</p>
+          <div class="price">Consulte o preço</div>
+          <a class="button" href="#">Consultar preço</a>
+        </article>
 
-    <div class="product">
-      <img src="https://placehold.co/300x200/f8e3d8/80513f?text=Perfume"
-           alt="Egeo Dolce">
-      <h3>Egeo Dolce</h3>
-      <p class="brand">O Boticário</p>
-      <p class="price">Consultar</p>
-    </div>
+        <article class="product">
+          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Una+Artisan" alt="Imagem ilustrativa do perfume Una Artisan">
+          <h3>Una Artisan</h3>
+          <p>Um toque de sofisticação para diferentes ocasiões.</p>
+          <div class="price">Consulte o preço</div>
+          <a class="button" href="#">Consultar preço</a>
+        </article>
 
-    <div class="product">
-      <img src="https://placehold.co/300x200/f8e3d8/80513f?text=Perfume"
-           alt="Una Artisan">
-      <h3>Una Artisan</h3>
-      <p class="brand">Natura</p>
-      <p class="price">Consultar</p>
-    </div>
+        <article class="product">
+          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Libre" alt="Imagem ilustrativa do perfume Libre">
+          <h3>Libre</h3>
+          <p>Uma fragrância cheia de personalidade.</p>
+          <div class="price">Consulte o preço</div>
+          <a class="button" href="#">Consultar preço</a>
+        </article>
 
-    <div class="product">
-      <img src="https://placehold.co/300x200/f8e3d8/80513f?text=Perfume"
-           alt="Libre">
-      <h3>Libre</h3>
-      <p class="brand">Yves Saint Laurent</p>
-      <p class="price">Consultar</p>
-    </div>
+        <article class="product">
+          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Floratta+Red" alt="Imagem ilustrativa do perfume Floratta Red">
+          <h3>Floratta Red</h3>
+          <p>Uma opção especial para completar sua coleção.</p>
+          <div class="price">Consulte o preço</div>
+          <a class="button" href="#">Consultar preço</a>
+        </article>
 
-    <div class="product">
-      <img src="https://placehold.co/300x200/f8e3d8/80513f?text=Perfume"
-           alt="Floratta Red">
-      <h3>Floratta Red</h3>
-      <p class="brand">O Boticário</p>
-      <p class="price">Consultar</p>
-    </div>
+      </div>
+    </section>
+  </main>
 
-  </div>
-</section>
-
-<footer>
-  <p>Perfumaria da Maria</p>
-  <p>Encontre sua essência!</p>
-</footer>
+  <footer>
+    <strong>Perfumaria da Maria</strong>
+    <p>Fragrâncias para todos os estilos.</p>
+    <p>© 2026 - Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
