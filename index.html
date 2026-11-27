@@ -2,424 +2,375 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfumaria da Maria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumaria da Maria</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box; 
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f2e9;
-      color: #49382e;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #fbf8f2;
+            color: #49382e;
+        }
 
-    header {
-      background: #49382e;
-      color: #f7f2e9;
-      padding: 25px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+        header {
+            background: #49382e;
+            color: #fff;
+            text-align: center;
+            padding: 30px 15px;
+        }
 
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 27px;
-      letter-spacing: 1px;
-    }
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
 
-    header span {
-      color: #d5b477;
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
+        header p {
+            color: #e3c58b;
+            letter-spacing: 3px;
+            font-size: 12px;
+        }
 
-    .hero {
-      max-width: 1200px;
-      margin: 55px auto;
-      padding: 0 25px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 45px;
-    }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 70px 8%;
+            max-width: 1300px;
+            margin: auto;
+        }
 
-    .hero-text h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(36px, 5vw, 55px);
-      line-height: 1.12;
-      margin-bottom: 22px;
-      color: #49382e;
-    }
+        .hero-content {
+            flex: 1;
+        }
 
-    .hero-text h1 span {
-      color: #a68148;
-    }
+        .hero h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
 
-    .hero-text p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #756456;
-      margin-bottom: 25px;
-    }
+        .hero p {
+            color: #766252;
+            font-size: 17px;
+            line-height: 1.7;
+        }
 
-    .hero-image {
-      min-height: 370px;
-      border-radius: 180px 180px 25px 25px;
-      background:
-        linear-gradient(rgba(73, 56, 46, 0.15), rgba(73, 56, 46, 0.15)),
-        url("https://placehold.co/800x900/e8d9c5/49382e?text=Perfumes+Nacionais+e+Importados")
-        center/cover;
-      box-shadow: 15px 15px 0 #dfcba9;
-    }
+        .hero img {
+            width: 42%;
+            max-width: 450px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 180px 180px 15px 15px;
+        }
 
-    .gold-line {
-      width: 75px;
-      height: 3px;
-      background: #b99a65;
-      margin-bottom: 22px;
-    }
+        .catalog {
+            padding: 55px 8%;
+            text-align: center;
+        }
 
-    .catalog {
-      background: #eee5d8;
-      padding: 65px 8%;
-      text-align: center;
-    }
+        .section-title {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
 
-    .catalog h2 {
-      font-family: Georgia, serif;
-      font-size: 36px;
-      margin-bottom: 12px;
-    }
+        .section-description {
+            color: #766252;
+            margin-bottom: 40px;
+        }
 
-    .catalog-intro {
-      color: #756456;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
+        .products {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
 
-    .products {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 25px;
-}
+        .product {
+            width: calc((100% - 50px) / 3);
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: left;
+            box-shadow: 0 5px 18px rgba(73, 56, 46, 0.08);
+        }
 
-.product {
-    grid-column: span 2;
-}
+        .product img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #eee5d8;
+        }
 
-.product:nth-child(4) {
-    grid-column: 2 / span 2;
-}
+        .product h3 {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            margin: 17px 0 10px;
+        }
 
-.product:nth-child(5) {
-    grid-column: 4 / span 2;
-}
-    }
+        .product p {
+            color: #766252;
+            line-height: 1.5;
+            min-height: 45px;
+        }
 
-    .product {
-      background: #fbf8f2;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: left;
-      box-shadow: 0 5px 18px rgba(73, 56, 46, 0.08);
-      transition: transform 0.25s;
-    }
+        .product a {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            padding: 12px;
+            background: #49382e;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
 
-    .product:hover {
-      transform: translateY(-5px);
-    }
+        .categories {
+            padding: 60px 8%;
+            text-align: center;
+            background: #f3ede3;
+        }
 
-    .product img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 8px;
-      background: #e8dccb;
-    }
+        .category-list {
+            max-width: 1050px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px 25px;
+        }
 
-    .product h3 {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      margin: 17px 0 8px;
-    }
+        .category {
+            width: calc(25% - 20px);
+        }
 
-    .product p {
-      color: #8a7868;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
+        .category img {
+            width: 150px;
+            height: 150px;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #d5b477;
+            padding: 4px;
+            background: white;
+        }
 
-    .price {
-      color: #a68148;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+        .category h3 {
+            font-family: Georgia, serif;
+            margin-top: 12px;
+            font-size: 18px;
+        }
 
-    .button {
-      display: block;
-      text-align: center;
-      background: #49382e;
-      color: #fff;
-      text-decoration: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: background 0.2s;
-    }
+        footer {
+            background: #49382e;
+            color: #fff;
+            text-align: center;
+            padding: 30px 15px;
+            line-height: 1.8;
+        }
 
-    .button:hover {
-      background: #806344;
-    }
+        footer p {
+            color: #e3c58b;
+            font-size: 14px;
+        }
 
-    footer {
-      background: #49382e;
-      color: #e9ddca;
-      text-align: center;
-      padding: 30px 15px;
-      line-height: 1.8;
-    }
+        @media (max-width: 800px) {
+            .product {
+                width: calc((100% - 25px) / 2);
+            }
 
-    footer strong {
-      color: #d5b477;
-    }
+            .category {
+                width: calc(33.333% - 20px);
+            }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        margin: 35px auto;
-      }
+            .hero {
+                padding: 45px 6%;
+            }
 
-      .hero-image {
-        min-height: 300px;
-        max-width: 500px;
-        width: 100%;
-        margin: auto;
-      }
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
 
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+        @media (max-width: 550px) {
+            header h1 {
+                font-size: 28px;
+            }
 
-    @media (max-width: 520px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
+            header p {
+                letter-spacing: 2px;
+            }
 
-      .products {
-        grid-template-columns: 1fr;
-      }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
 
-      .product img {
-        height: 300px;
-      }
+            .hero img {
+                width: 100%;
+                height: 250px;
+            }
 
-      .catalog {
-        padding: 45px 20px;
-      }
-    }
-  </style>
-.categories {
-    padding: 55px 30px;
-    text-align: center;
-    background: #f7f2e9;
-}
+            .hero h2 {
+                font-size: 32px;
+            }
 
-.categories h2 {
-    color: #49382e;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+            .product {
+                width: 100%;
+            }
 
-.categories p {
-    color: #766252;
-    margin-bottom: 35px;
-}
+            .category {
+                width: calc(50% - 15px);
+            }
 
-.category-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    max-width: 900px;
-    margin: auto;
-}
+            .category img {
+                width: 120px;
+                height: 120px;
+            }
 
-.category img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #d5b477;
-    padding: 4px;
-    background: #fff;
-}
-
-.category h3 {
-    color: #49382e;
-    margin-top: 12px;
-    font-size: 18px;
-}
-
-@media (max-width: 600px) {
-    .category-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px 15px;
-    }
-
-    .category img {
-        width: 120px;
-        height: 120px;
-    }
-}
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Perfumaria da Maria</div>
-    <span>BELEZA • ELEGÂNCIA • PERSONALIDADE</span>
-  </header>
+    <header>
+        <h1>Perfumaria da Maria</h1>
+        <p>BELEZA • ELEGÂNCIA • PERSONALIDADE</p>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <div class="gold-line"></div>
+    <main>
 
-        <h1>
-          Conheça nossos
-          <span>perfumes</span>
-        </h1>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Conheça nossos perfumes</h2>
+                <p>
+                    Trabalhamos com fragrâncias nacionais e importadas,
+                    selecionadas para todos os estilos e personalidades.
+                    Tudo o que você procura em beleza e perfumaria,
+                    em um só lugar.
+                </p>
+            </div>
 
-        <p>
-          Trabalhamos com perfumes multimarcas, nacionais e
-          importados, oferecendo fragrâncias para todos os estilos,
-          ocasiões e personalidades.
-        </p>
+            <img
+                src="https://placehold.co/600x450/e8dccb/49382e?text=Perfumaria+da+Maria"
+                alt="Perfumaria da Maria">
+        </section>
 
-        <p>
-          Encontre aqui aquele aroma especial que combina com você.
-          Sua próxima fragrância favorita pode estar a um clique!
-        </p>
-      </div>
+        <section class="catalog">
+            <h2 class="section-title">Nossos perfumes</h2>
+            <p class="section-description">
+                Encontre a fragrância que combina com você.
+            </p>
 
-      <div class="hero-image" role="img"
-        aria-label="Imagem ilustrativa de perfumes nacionais e importados">
-      </div>
-    </section>
+            <div class="products">
 
-    <section class="catalog">
-      <h2>Nossas fragrâncias</h2>
+                <div class="product">
+                    <img src="https://placehold.co/500x350/e8dccb/49382e?text=Lily" alt="Perfume Lily">
+                    <h3>Lily</h3>
+                    <p>Elegância e sofisticação em uma fragrância marcante.</p>
+                    <a href="#">Consulte o preço</a>
+                </div>
 
-      <p class="catalog-intro">
-        Confira alguns dos nossos produtos em destaque.
-      </p>
+                <div class="product">
+                    <img src="https://placehold.co/500x350/e8dccb/49382e?text=Egeo+Dolce" alt="Perfume Egeo Dolce">
+                    <h3>Egeo Dolce</h3>
+                    <p>Uma fragrância doce, divertida e envolvente.</p>
+                    <a href="#">Consulte o preço</a>
+                </div>
 
-      <div class="products">
+                <div class="product">
+                    <img src="https://placehold.co/500x350/e8dccb/49382e?text=Una+Artisan" alt="Perfume Una Artisan">
+                    <h3>Una Artisan</h3>
+                    <p>Personalidade e delicadeza em cada detalhe.</p>
+                    <a href="#">Consulte o preço</a>
+                </div>
 
-        <article class="product">
-          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Lily" alt="Imagem ilustrativa do perfume Lily">
-          <h3>Lily</h3>
-          <p>Elegância e personalidade em uma fragrância especial.</p>
-          <div class="price">Consulte o preço</div>
-          <a class="button" href="#">Consultar preço</a>
-        </article>
+                <div class="product">
+                    <img src="https://placehold.co/500x350/e8dccb/49382e?text=Libre" alt="Perfume Libre">
+                    <h3>Libre</h3>
+                    <p>Uma fragrância sofisticada para quem gosta de marcar presença.</p>
+                    <a href="#">Consulte o preço</a>
+                </div>
 
-        <article class="product">
-          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Egeo+Dolce" alt="Imagem ilustrativa do perfume Egeo Dolce">
-          <h3>Egeo Dolce</h3>
-          <p>Uma fragrância marcante para quem gosta de se destacar.</p>
-          <div class="price">Consulte o preço</div>
-          <a class="button" href="#">Consultar preço</a>
-        </article>
+                <div class="product">
+                    <img src="https://placehold.co/500x350/e8dccb/49382e?text=Floratta+Red" alt="Perfume Floratta Red">
+                    <h3>Floratta Red</h3>
+                    <p>Uma combinação envolvente e cheia de personalidade.</p>
+                    <a href="#">Consulte o preço</a>
+                </div>
 
-        <article class="product">
-          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Una+Artisan" alt="Imagem ilustrativa do perfume Una Artisan">
-          <h3>Una Artisan</h3>
-          <p>Um toque de sofisticação para diferentes ocasiões.</p>
-          <div class="price">Consulte o preço</div>
-          <a class="button" href="#">Consultar preço</a>
-        </article>
+            </div>
+        </section>
 
-        <article class="product">
-          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Libre" alt="Imagem ilustrativa do perfume Libre">
-          <h3>Libre</h3>
-          <p>Uma fragrância cheia de personalidade.</p>
-          <div class="price">Consulte o preço</div>
-          <a class="button" href="#">Consultar preço</a>
-        </article>
+        <section class="categories">
+            <h2 class="section-title">Muito além dos perfumes</h2>
+            <p class="section-description">
+                Descubra tudo o que temos para você.
+            </p>
 
-        <article class="product">
-          <img src="https://placehold.co/600x700/e8dccb/49382e?text=Floratta+Red" alt="Imagem ilustrativa do perfume Floratta Red">
-          <h3>Floratta Red</h3>
-          <p>Uma opção especial para completar sua coleção.</p>
-          <div class="price">Consulte o preço</div>
-          <a class="button" href="#">Consultar preço</a>
-        </article>
+            <div class="category-list">
 
-      </div>
-    </section>
-    <section class="categories">
-    <h2>Muito além dos perfumes</h2>
-    <p>Tudo o que você procura em beleza e perfumaria, em um só lugar.</p>
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Maquiagens" alt="Maquiagens">
+                    <h3>Maquiagens</h3>
+                </div>
 
-    <div class="category-list">
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Perfumes" alt="Perfumes">
+                    <h3>Perfumes</h3>
+                </div>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Maquiagens" alt="Maquiagens">
-            <h3>Maquiagens</h3>
-        </div>
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Body+Splash" alt="Body Splash">
+                    <h3>Body Splash</h3>
+                </div>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Perfumes" alt="Perfumes">
-            <h3>Perfumes</h3>
-        </div>
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Cremes" alt="Cremes">
+                    <h3>Cremes</h3>
+                </div>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Body+Splash" alt="Body Splash">
-            <h3>Body Splash</h3>
-        </div>
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Sabonetes" alt="Sabonetes">
+                    <h3>Sabonetes</h3>
+                </div>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Cremes" alt="Cremes">
-            <h3>Cremes</h3>
-        </div>
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Rimel" alt="Rímel">
+                    <h3>Rímel</h3>
+                </div>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Sabonetes" alt="Sabonetes">
-            <h3>Sabonetes</h3>
-        </div>
+                <div class="category">
+                    <img src="https://placehold.co/300x300/e8dccb/49382e?text=Batons" alt="Batons">
+                    <h3>Batons</h3>
+                </div>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Rimel" alt="Rímel">
-            <h3>Rímel</h3>
-        </div>
+            </div>
+        </section>
 
-        <div class="category">
-            <img src="https://placehold.co/300x300/e8dccb/49382e?text=Batons" alt="Batons">
-            <h3>Batons</h3>
-        </div>
+    </main>
 
-    </div>
-</section>
-  </main>
-
-  <footer>
-    <strong>Perfumaria da Maria</strong>
-    <p>Fragrâncias para todos os estilos.</p>
-    <p>© 2026 - Todos os direitos reservados.</p>
-  </footer>
+    <footer>
+        <h3>Perfumaria da Maria</h3>
+        <p>Estúdio de fragrâncias para todos os estilos.</p>
+        <p>© 2026 - Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
