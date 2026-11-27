@@ -1,16 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfumaria da Maria - Beleza, elegância e personalidade.">
     <title>Perfumaria da Maria</title>
 
     <style>
+        /* CONFIGURAÇÕES GERAIS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -19,6 +24,7 @@
             color: #49382e;
         }
 
+        /* CABEÇALHO */
         header {
             background: #49382e;
             color: #fff;
@@ -28,24 +34,25 @@
 
         header h1 {
             font-family: Georgia, serif;
-            font-size: 34px;
+            font-size: 36px;
             margin-bottom: 10px;
         }
 
         header p {
-            color: #e3c58b;
-            letter-spacing: 3px;
+            color: #d5b477;
             font-size: 12px;
+            letter-spacing: 3px;
         }
 
+        /* APRESENTAÇÃO */
         .hero {
+            max-width: 1250px;
+            margin: auto;
+            padding: 75px 7%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
-            padding: 70px 8%;
-            max-width: 1300px;
-            margin: auto;
+            gap: 45px;
         }
 
         .hero-content {
@@ -54,42 +61,44 @@
 
         .hero h2 {
             font-family: Georgia, serif;
-            font-size: 42px;
+            font-size: 45px;
             margin-bottom: 20px;
         }
 
         .hero p {
             color: #766252;
             font-size: 17px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .hero img {
-            width: 42%;
-            max-width: 450px;
-            height: 320px;
+            width: 43%;
+            height: 340px;
             object-fit: cover;
             border-radius: 180px 180px 15px 15px;
+            border: 5px solid #d5b477;
         }
 
+        /* CATÁLOGO DE PERFUMES */
         .catalog {
-            padding: 55px 8%;
+            padding: 65px 7%;
             text-align: center;
         }
 
         .section-title {
             font-family: Georgia, serif;
-            font-size: 32px;
+            font-size: 34px;
             margin-bottom: 12px;
         }
 
         .section-description {
             color: #766252;
             margin-bottom: 40px;
+            line-height: 1.6;
         }
 
         .products {
-            max-width: 1200px;
+            max-width: 1150px;
             margin: auto;
             display: flex;
             flex-wrap: wrap;
@@ -101,55 +110,66 @@
             width: calc((100% - 50px) / 3);
             background: #fff;
             border-radius: 12px;
-            padding: 15px;
+            padding: 16px;
             text-align: left;
-            box-shadow: 0 5px 18px rgba(73, 56, 46, 0.08);
+            box-shadow: 0 5px 20px rgba(73, 56, 46, 0.09);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
         }
 
         .product img {
             width: 100%;
-            height: 230px;
+            height: 245px;
             object-fit: cover;
             border-radius: 8px;
-            background: #eee5d8;
         }
 
         .product h3 {
             font-family: Georgia, serif;
-            font-size: 22px;
-            margin: 17px 0 10px;
+            font-size: 23px;
+            margin: 18px 0 10px;
         }
 
         .product p {
             color: #766252;
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.6;
             min-height: 45px;
         }
 
         .product a {
             display: block;
-            text-align: center;
             margin-top: 18px;
-            padding: 12px;
-            background: #49382e;
-            color: white;
+            padding: 13px;
+            text-align: center;
             text-decoration: none;
+            background: #49382e;
+            color: #fff;
             border-radius: 6px;
+            transition: background 0.3s;
         }
 
+        .product a:hover {
+            background: #725943;
+        }
+
+        /* CATEGORIAS */
         .categories {
-            padding: 60px 8%;
+            padding: 70px 7%;
             text-align: center;
             background: #f3ede3;
         }
 
         .category-list {
             max-width: 1050px;
-            margin: 40px auto 0;
+            margin: 45px auto 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 35px 25px;
+            gap: 40px 25px;
         }
 
         .category {
@@ -157,28 +177,40 @@
         }
 
         .category img {
-            width: 150px;
-            height: 150px;
+            width: 155px;
+            height: 155px;
             max-width: 100%;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #d5b477;
             padding: 4px;
-            background: white;
+            background: #fff;
+            transition: transform 0.3s;
+        }
+
+        .category img:hover {
+            transform: scale(1.05);
         }
 
         .category h3 {
             font-family: Georgia, serif;
-            margin-top: 12px;
             font-size: 18px;
+            margin-top: 14px;
+            color: #49382e;
         }
 
+        /* RODAPÉ */
         footer {
             background: #49382e;
             color: #fff;
             text-align: center;
-            padding: 30px 15px;
-            line-height: 1.8;
+            padding: 35px 15px;
+            line-height: 1.9;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 23px;
         }
 
         footer p {
@@ -186,7 +218,8 @@
             font-size: 14px;
         }
 
-        @media (max-width: 800px) {
+        /* TABLETS */
+        @media (max-width: 850px) {
             .product {
                 width: calc((100% - 25px) / 2);
             }
@@ -195,18 +228,15 @@
                 width: calc(33.333% - 20px);
             }
 
-            .hero {
-                padding: 45px 6%;
-            }
-
             .hero h2 {
-                font-size: 32px;
+                font-size: 36px;
             }
         }
 
+        /* CELULARES */
         @media (max-width: 550px) {
             header h1 {
-                font-size: 28px;
+                font-size: 29px;
             }
 
             header p {
@@ -216,15 +246,25 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
+                padding: 50px 7%;
+            }
+
+            .hero h2 {
+                font-size: 34px;
             }
 
             .hero img {
                 width: 100%;
-                height: 250px;
+                height: 260px;
             }
 
-            .hero h2 {
-                font-size: 32px;
+            .catalog,
+            .categories {
+                padding: 50px 6%;
+            }
+
+            .section-title {
+                font-size: 28px;
             }
 
             .product {
@@ -236,12 +276,8 @@
             }
 
             .category img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .section-title {
-                font-size: 27px;
+                width: 125px;
+                height: 125px;
             }
         }
     </style>
@@ -249,6 +285,7 @@
 
 <body>
 
+    <!-- CABEÇALHO -->
     <header>
         <h1>Perfumaria da Maria</h1>
         <p>BELEZA • ELEGÂNCIA • PERSONALIDADE</p>
@@ -256,9 +293,11 @@
 
     <main>
 
+        <!-- APRESENTAÇÃO -->
         <section class="hero">
             <div class="hero-content">
                 <h2>Conheça nossos perfumes</h2>
+
                 <p>
                     Trabalhamos com fragrâncias nacionais e importadas,
                     selecionadas para todos os estilos e personalidades.
@@ -269,11 +308,14 @@
 
             <img
                 src="https://placehold.co/600x450/e8dccb/49382e?text=Perfumaria+da+Maria"
-                alt="Perfumaria da Maria">
+                alt="Apresentação da Perfumaria da Maria">
         </section>
 
+        <!-- PRODUTOS -->
         <section class="catalog">
+
             <h2 class="section-title">Nossos perfumes</h2>
+
             <p class="section-description">
                 Encontre a fragrância que combina com você.
             </p>
@@ -318,8 +360,11 @@
             </div>
         </section>
 
+        <!-- CATEGORIAS -->
         <section class="categories">
+
             <h2 class="section-title">Muito além dos perfumes</h2>
+
             <p class="section-description">
                 Descubra tudo o que temos para você.
             </p>
@@ -366,6 +411,7 @@
 
     </main>
 
+    <!-- RODAPÉ -->
     <footer>
         <h3>Perfumaria da Maria</h3>
         <p>Estúdio de fragrâncias para todos os estilos.</p>
